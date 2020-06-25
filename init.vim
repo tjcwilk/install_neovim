@@ -54,7 +54,7 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'morhetz/gruvbox'              " nice colour theme
 Plug 'scrooloose/nerdtree'          " File explorer tree
-Plug 'vimwiki/vimwiki'              " A wiki, for vim`
+"Plug 'vimwiki/vimwiki'              " A wiki, for vim`
 Plug 'tpope/vim-fugitive'           " Nice git integration
 Plug 'vim-airline/vim-airline'      " Nice status bar
 Plug 'neoclide/coc.nvim', {'branch': 'release'} "intellisense
@@ -72,3 +72,32 @@ call plug#end()
 " colours
 colorscheme gruvbox
 set background=dark
+
+
+" Rainbox pairs
+au FileType c,cpp,objc,objcpp,js call rainbow#load()
+let g:rainbow_active = 1
+
+" NERDTree
+"map <C-n> :NERDTreeToggle<CR>
+map <leader>n :NERDTreeToggle<CR>
+let NERDTreeShowHidden=1
+nnoremap <Leader>pt :NERDTreeToggle<Enter>
+nnoremap <silent> <Leader>pv :NERDTreeFind<CR>
+
+" fzf
+nnoremap <C-p> :Files<Cr>           " map ctrl+p to fzf
+
+
+" RipGrep
+
+nnoremap <leader>g :Rg<CR>
+
+command! -bang -nargs=* Rg
+  \ call fzf#vim#grep(
+  \   'rg --column --line-number --no-heading --color=always --smart-case '.shellescape(<q-args>), 1,
+  \   fzf#vim#with_preview(), <bang>0)
+
+
+
+
