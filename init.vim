@@ -1,12 +1,15 @@
 " Tobys nvim Configuration
 
-" Shortcuts
+
+"Shortcuts
 let mapleader=" "       		" set leader as space
 imap jj <Esc>				" Escape insert quicker
+
 
 " Alias write and quit
 nnoremap <leader>q :wq<CR>
 nnoremap <leader>w :w<CR>
+
 
 " Switch vim windows
 map <leader>h :wincmd h<CR>
@@ -18,13 +21,32 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
+
 " Visuals
-set ruler               		" Show line & colum number
+set ruler               	" Show line & colum number
 set cursorline				" Highlights current line
-set number              		" Shows line numbers"
+set number              	" Shows line numbers"
 set textwidth=100			" text width on page
 set autoindent				" auto indent
-syntax on				" enable syntax highlighting
+syntax on				    " enable syntax highlighting
+
+set visualbell              " Disable anoying bell on windows    
+
+
+" Tab configuration
+set expandtab				" turns tab key into spaces
+set smarttab				" makes tab key go to next indent
+set smartindent				" auto indent on newline
+set autoindent				" copy indent from previouse
+set tabstop=4				" The width of a tab, in spaces
+set shiftwidth=4			" The size of an indent, measured in spaces
+set softtabstop=4           " confused with all these tab settings now
+set expandtab               " 
+
+
+" Automatically line wrap text files
+au BufRead,BufNewFile *.md *.txt setlocal textwidth=80
+
 
 
 " Make sure Plug is installed first
