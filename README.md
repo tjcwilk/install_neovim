@@ -1,3 +1,6 @@
-Installs NeoVim on ubuntu.
+Installs NeoVim on ubuntu, including my config.
 
-Includes my neovim config.
+```
+chmox +x ./install.sh
+./install.sh
+```
