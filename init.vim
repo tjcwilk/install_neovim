@@ -54,10 +54,8 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'morhetz/gruvbox'              " nice colour theme
 Plug 'scrooloose/nerdtree'          " File explorer tree
-"Plug 'vimwiki/vimwiki'              " A wiki, for vim`
 Plug 'tpope/vim-fugitive'           " Nice git integration
 Plug 'vim-airline/vim-airline'      " Nice status bar
-Plug 'neoclide/coc.nvim', {'branch': 'release'} "intellisense
 Plug 'junegunn/goyo.vim'            " Distraction free writer
 Plug 'frazrepo/vim-rainbow'         " Color matches brackets
 Plug 'jiangmiao/auto-pairs'         " auto closes brackets
